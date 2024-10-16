@@ -1,0 +1,34 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+
+    <persistence-unit name="EmployeePU">
+        <!-- JPA Implementation Provider -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!-- JPA Database Configuration -->
+        <class>com.entity.Employee</class>
+        <class>com.entity.Admin</class>
+        <class>com.entity.Application</class>
+        <class>com.entity.Evaluation</class>
+        <class>com.entity.JobOffer</class>
+        <class>com.entity.Recruiter</class>
+        <class>com.entity.User</class>
+        <class>com.entity.Vacation</class>
+
+
+        <properties>
+            <!-- JDBC Configuration -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/EmployManagerV2"/>
+            <property name="javax.persistence.jdbc.user" value="postgres"/>
+            <property name="javax.persistence.jdbc.password" value="200361816"/>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+
+            <!-- Hibernate Configuration -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
