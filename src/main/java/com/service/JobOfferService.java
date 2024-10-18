@@ -1,9 +1,11 @@
 package com.service;
 
+import com.DAO.imp.EmployeeDAO;
 import com.entity.Employee;
 import com.entity.JobOffer;
+import com.service.EmailService;
+
 import java.util.List;
-import com.DAO.imp.EmployeeDAO;
 
 public class JobOfferService {
     EmployeeDAO employeeDAO;

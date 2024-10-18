@@ -1,6 +1,7 @@
 package com.entity;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -84,4 +85,5 @@ public class Evaluation {
     public void setComments(String comments) {
         this.comments = comments;
     }
+
 }

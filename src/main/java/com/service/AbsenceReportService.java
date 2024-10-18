@@ -19,13 +19,12 @@ public class AbsenceReportService {
 
     public List<AbsenceStats> generateMonthlyReport(Date startDate, Date endDate) {
         List<Vacation> vacations = vacationDAO.getVacationsBetween(startDate, endDate);
+        System.out.println("Vacations retrieved: " + vacations.size());
         return aggregateVacations(vacations);
     }
 
+
     private List<AbsenceStats> aggregateVacations(List<Vacation> vacations) {
-        // Implement aggregation logic for the report here
-        // For instance, count how many days are vacations, sick days, unpaid leave, etc.
-        // Returning null for now, you can implement the logic based on your business needs.
         return null;
     }
 }

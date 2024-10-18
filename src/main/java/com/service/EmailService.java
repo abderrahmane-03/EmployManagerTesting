@@ -7,12 +7,11 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.mail.Authenticator;
-import javax.mail.PasswordAuthentication;  // Make sure to import the right class
+import javax.mail.PasswordAuthentication;
 import java.util.Properties;
 
 public class EmailService {
     public void sendEmail(String to, String subject, String content) {
-        // Configure the email properties
         Properties props = new Properties();
         props.put("mail.smtp.host", "smtp.gmail.com");
         props.put("mail.smtp.port", "587");
@@ -22,7 +21,6 @@ public class EmailService {
         Session session = Session.getInstance(props, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                // Return PasswordAuthentication using Strings
                 return new PasswordAuthentication("abdrahmanhafidi03@gmail.com", "dped kjjd rksc cyyz");
             }
         });

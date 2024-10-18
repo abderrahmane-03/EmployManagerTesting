@@ -16,7 +16,6 @@ public class FamilyAllowanceReportService {
         this.familyAllowanceService = familyAllowanceService;
     }
 
-    // Calculates the total family allowance for a list of employees
     public double calculateTotalAllowance(List<Employee> employees) {
         double total = 0;
         for (Employee employee : employees) {
@@ -25,9 +24,7 @@ public class FamilyAllowanceReportService {
         return total;
     }
 
-    // Fetches employees whose family allowances were calculated between the given date range
     public List<Employee> getEmployeesWithAllowances(Date startDate, Date endDate) {
-        // Fetch employees based on date range (this would require a query implementation in DAO)
         return employeeDAO.getEmployeesWithAllowancesBetween(startDate, endDate);
     }
 }

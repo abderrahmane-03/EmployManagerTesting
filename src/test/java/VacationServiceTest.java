@@ -36,7 +36,7 @@ public class VacationServiceTest {
 
     @Test
     public void testUpdateVacationStatus_Success() throws Exception {
-        // Arrange
+
         Employee employee = new Employee();
         employee.setVacation(10);
 
@@ -100,7 +100,7 @@ public class VacationServiceTest {
 
         Vacation result = vacationService.getVacationById(1);
 
-      
+
         assertEquals(1, result.getId());
         verify(vacationDAO, times(1)).getVacationById(1);
     }

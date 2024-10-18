@@ -22,13 +22,12 @@ public class ScheduledTaskService {
 
     public void startScheduledTask() {
         ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
-        // Schedule the task to run every day at noon
         long initialDelay = calculateInitialDelayForNoon();
         scheduler.scheduleAtFixedRate(this::sendEvaluationReminder, initialDelay, 24, TimeUnit.HOURS);
     }
 
-    private void sendEvaluationReminder() {
-        List<Evaluation> upcomingEvaluations = evaluationDAO.getPendingEvaluationsWithin(7);  // Due in 7 days
+    public void sendEvaluationReminder() {
+        List<Evaluation> upcomingEvaluations = evaluationDAO.getPendingEvaluationsWithin(7);
         for (Evaluation eval : upcomingEvaluations) {
             String subject = "Reminder: Performance Evaluation Due";
             String message = "Please complete the performance evaluation for " + eval.getEmployee().getName() + " by " + eval.getDueDate();
@@ -36,7 +35,7 @@ public class ScheduledTaskService {
         }
     }
 
-    private long calculateInitialDelayForNoon() {
+    public long calculateInitialDelayForNoon() {
         LocalDateTime now = LocalDateTime.now();
         LocalDateTime nextNoon = now.withHour(12).withMinute(0).withSecond(0);
 

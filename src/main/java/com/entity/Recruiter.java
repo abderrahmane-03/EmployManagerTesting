@@ -3,11 +3,9 @@ package com.entity;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
-
 @Entity
 @Table(name = "\"Recruiter\"")
-public class Recruiter extends User {
-
+public class Recruiter extends Employee {  // Change from User to Employee
     @OneToMany(mappedBy = "recruiter", cascade = CascadeType.ALL)
     private List<JobOffer> jobOffers;
 
